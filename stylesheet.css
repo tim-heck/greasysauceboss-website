@@ -1,20 +1,275 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: #ffffff;
+  min-height: 100vh;
 }
 
 .container {
   width: auto;
-  height: auto;
+  min-height: 95vh;
   margin: 1em;
   padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
 }
 
 #block {
-  padding: 20em;
+  z-index: 0;
+}
+
+.flex-container-home {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  flex-flow: column wrap;
+  flex: 1;
+}
+
+.flex-row-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 15em;
+}
+
+.flex-row-home:last-child {
+  margin: 0;
+  height: 10em;
+}
+
+.flex-item {
+  /* font-family: "Fugaz One", sans-serif; */
+  font-family: "Montserrat", "Fugaz One", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3em;
+}
+
+.album-cover {
+  width: 400px;
+  height: 400px;
   background-color: #ffffff;
+  border: 3px solid #000000;
+  position: absolute;
+  z-index: 1;
+  margin-top: -6em;
+}
+
+nav {
+  background-color: #1f2833;
+  margin: 0 auto 3em;
+  height: 4.5em;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+a {
+	font-family: 'Montserrat-SemiBold', sans-serif;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a.text-logo {
+  font-size: 2.5em;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 13px 16px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+a.text-logo:hover {
+  color: #66fcf1;
+}
+
+a.btn {
+	background-color: #000000;
+	padding: 1em;
+	border-radius: 4px;
+	color: #ffffff;
+	transition: all .2s ease-in-out;
+}
+
+a.btn:hover {
+	cursor: pointer;
+	background-color: #ffffff;
+	color: rgba(193,151,106,1);
+	box-shadow: 0px 0px 0px 3px rgba(193,151,106,1);
+}
+
+/* Mobile sidenav */
+
+#grayBlock {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	background-color: #000000;
+	opacity: .6;
+	display: none;
+	transition: .5s ease-in-out;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  right: 0;
+  background-color: #1f2833;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover{
+  color: #c5c6c7;
+  border-right: 5px solid #c5c6c7;
+}
+
+.sidenav li.active a {
+  color: #66fcf1;
+  border-right: 5px solid #66fcf1;
+  cursor: default;
+  pointer-events: none;
+
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  margin-left: 50px;
+  right: 10px;
+  top: 10px;
+}
+
+.openbtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 1em;
+}
+
+.hamburger {
+  width: 35px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 7px 0;
+  border-radius: 4px;
+}
+
+.closebtn {
+	padding: .5em;
+}
+
+.bar1 {
+	width: 35px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transform: rotate(-45deg) translate(-8px, 8px);
+  border-radius: 4px;
+}
+
+.bar2 {
+	width: 35px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transform: rotate(45deg) translate(1px, 1px);
+  border-radius: 4px;
+}
+
+/* Desktop Nav */
+
+.desktopNav {
+	display: none;
+  float: right;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1f2833;
+}
+
+li.nav-item {
+	float: left;
+}
+
+li.nav-item a {
+	display: block;
+	color: #ffffff;
+	text-align: center;
+	padding: 1.5em 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 3.5px;
+}
+
+li.nav-item:hover {
+	border-bottom: 5px solid #ffffff;
+}
+
+li.nav-item.active {
+  color: #66fcf1;
+	pointer-events: none;
+	border-bottom: 5px solid #66fcf1;
+}
+
+li.nav-item.active:hover {
+	border-bottom: 5px solid #66fcf1;
+	cursor: default;
+}
+
+li.nav-item.active a {
+	color: #66fcf1;
+}
+
+li.nav-item.active a:hover {
+	color: #66fcf1;
+	cursor: default;
+}
+
+footer {
+  margin: -5em 0 0 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: .8em;
+  text-align: center;
+}
+
+@media all and (min-width: 1250px) {
+  .desktopNav {
+    display: block;
+  }
+
+  .openbtn {
+		display: none;
+	}
+
+  .sidenav {
+    display: none;
+  }
+
+  .flex-container-home {
+    display: flex;
+  }
 }
