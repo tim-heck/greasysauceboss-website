@@ -18,11 +18,8 @@ p {
 .container {
   width: auto;
   min-height: 95vh;
-  margin: 1em;
+  margin: 7em 1em 1em 1em;
   padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: transparent;
 }
 
@@ -76,6 +73,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
 }
 
 a {
@@ -260,6 +258,50 @@ li.nav-item.active a:hover {
 	cursor: default;
 }
 
+/* Merch Page */
+.merch {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.merch-card {
+  padding: 2%;
+  flex: 1 96%;
+}
+
+.merch-image {
+  position: relative;
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.merch-image img {
+  max-width: 100%;
+}
+
+.merch-info-test {
+  margin-top: auto;
+  color: #000000;
+  background-color: #ffffff;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0em 1em;
+}
+
+.merch-image:hover .merch-info-test {
+  opacity: 1;
+}
+
+.merch-image:hover img {
+  opacity: 0.4;
+}
+
 /* Shows list */
 .container-col {
   display: flex;
@@ -307,6 +349,13 @@ footer {
   text-align: center;
 }
 
+
+@media all and (min-width: 500px) {
+  .merch-card {
+    flex: 1 46%;
+  }
+}
+
 @media all and (min-width: 700px) {
   .container-col {
     display: flex;
@@ -340,6 +389,12 @@ footer {
   }
 }
 
+@media all and (min-width: 850px) {
+  .merch-card {
+    flex: 1 29%;
+  }
+}
+
 @media all and (min-width: 1250px) {
   .desktopNav {
     display: block;
@@ -359,5 +414,15 @@ footer {
 
   .flex-container-home {
     display: flex;
+  }
+
+  .merch-card {
+    flex: 1 21%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  .merch-card {
+    flex: 1 16%;
   }
 }
