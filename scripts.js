@@ -25,13 +25,3 @@ function closeSideNav() {
     "display": "none"
   });
 }
-
-function grayBlockDisplay() {
-  $("#offCanvasNav").css({
-    "width": "0px",
-    "border": "none"
-  });
-  $("#grayBlock").css({
-    "display": "none"
-  });
-}
