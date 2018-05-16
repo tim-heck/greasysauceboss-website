@@ -8,11 +8,8 @@ body, html {
 .container {
   width: auto;
   min-height: 95vh;
-  margin: 1em;
+  margin: 7em 1em 1em 1em;
   padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: transparent;
 }
 
@@ -66,6 +63,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
 }
 
 a {
@@ -249,11 +247,115 @@ li.nav-item.active a:hover {
 	cursor: default;
 }
 
+/* Merch Page */
+.merch {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.merch-card {
+  padding: 2%;
+  flex: 1 96%;
+}
+
+.merch-image {
+  position: relative;
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.merch-image img {
+  max-width: 100%;
+}
+
+.merch-info-test {
+  margin-top: auto;
+  color: #000000;
+  background-color: #ffffff;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0em 1em;
+}
+
+.merch-image:hover .merch-info-test {
+  opacity: 1;
+}
+
+.merch-image:hover img {
+  opacity: 0.4;
+}
+
+/* .merch-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+} */
+
+/* .flex-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
+
+/* .item-image {
+  opacity: 1;
+  display: block;
+  width: 20em;
+  height: 20em;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+}
+
+.merch-item {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.flex-merch-item {
+  position: relative;
+  margin: 1em;
+}
+
+.flex-merch-item:hover .item-image {
+  opacity: 0.3;
+}
+
+.flex-merch-item:hover .merch-item {
+  opacity: 1;
+} */
+
 footer {
   margin: -5em 0 0 0;
   font-family: "Open Sans", sans-serif;
   font-size: .8em;
   text-align: center;
+}
+
+@media all and (min-width: 500px) {
+  .merch-card {
+    flex: 1 46%;
+  }
+}
+
+@media all and (min-width: 850px) {
+  .merch-card {
+    flex: 1 29%;
+  }
 }
 
 @media all and (min-width: 1250px) {
@@ -275,5 +377,15 @@ footer {
 
   .flex-container-home {
     display: flex;
+  }
+
+  .merch-card {
+    flex: 1 21%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  .merch-card {
+    flex: 1 16%;
   }
 }
