@@ -5,6 +5,16 @@ body, html {
   min-height: 100vh;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
 .container {
   width: auto;
   min-height: 95vh;
@@ -87,24 +97,24 @@ a.text-logo:hover {
   color: #66fcf1;
 }
 
-a.btn {
-	background-color: #000000;
+.btn {
+	background-color: #1f2833;
 	padding: 1em;
 	border-radius: 4px;
 	color: #ffffff;
 	transition: all .2s ease-in-out;
 }
 
-a.btn:hover {
+.btn:hover {
 	cursor: pointer;
 	background-color: #ffffff;
-	color: rgba(193,151,106,1);
-	box-shadow: 0px 0px 0px 3px rgba(193,151,106,1);
+	color: #1f2833;
+	box-shadow: 0px 0px 0px 3px #66fcf1;
 }
 
 /* Mobile sidenav */
 
-#grayBlock {
+/* #grayBlock {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -113,7 +123,7 @@ a.btn:hover {
 	opacity: .6;
 	display: none;
 	transition: .5s ease-in-out;
-}
+} */
 
 .sidenav {
   height: 100%;
@@ -205,7 +215,7 @@ ul {
 	list-style-type: none;
 	margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #1f2833;
 }
 
@@ -223,8 +233,9 @@ li.nav-item a {
 	letter-spacing: 3.5px;
 }
 
-li.nav-item:hover {
-	border-bottom: 5px solid #ffffff;
+li.nav-item a:hover {
+  color: #c5c6c7;
+	border-bottom: 5px solid #c5c6c7;
 }
 
 li.nav-item.active {
@@ -291,53 +302,45 @@ li.nav-item.active a:hover {
   opacity: 0.4;
 }
 
-/* .merch-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-} */
-
-/* .flex-col {
+/* Shows list */
+.container-col {
   display: flex;
   align-items: center;
-  flex-direction: column;
-} */
-
-/* .item-image {
-  opacity: 1;
-  display: block;
-  width: 20em;
-  height: 20em;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  background-color: #ffffff;
-  border: 3px solid #000000;
+  flex-flow: column;
+  margin: 4em 0em;
+  cursor: default;
 }
 
-.merch-item {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+ul.shows {
+  background-color: #ffffff;
+}
+
+li.show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+li.show hr {
+  width: 100%;
+  margin: 1em 0 2em;
+}
+
+.show-item {
+  margin-bottom: 20px;
+}
+
+.show-venue {
   text-align: center;
 }
 
-.flex-merch-item {
-  position: relative;
-  margin: 1em;
+h1.title {
+  font-size: 1.5em;
+  margin: 1em 0 2em;
 }
-
-.flex-merch-item:hover .item-image {
-  opacity: 0.3;
-}
-
-.flex-merch-item:hover .merch-item {
-  opacity: 1;
-} */
 
 footer {
   margin: -5em 0 0 0;
@@ -346,9 +349,43 @@ footer {
   text-align: center;
 }
 
+
 @media all and (min-width: 500px) {
   .merch-card {
     flex: 1 46%;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .container-col {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin: 4em 0em;
+  }
+
+  li.show {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .show-item {
+    margin: 0;
+  }
+
+  .show-venue {
+    flex: 1;
+    width: 25em;
+  }
+
+  .show-date {
+    width: 4em;
+  }
+
+  h1.title {
+    font-size: 2em;
+    align-self: flex-start;
+    margin: 1em 0 1em;
   }
 }
 
