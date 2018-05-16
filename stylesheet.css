@@ -64,7 +64,7 @@ p {
   background-color: #ffffff;
   border: 3px solid #000000;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   margin-top: -6em;
 }
 
@@ -344,7 +344,11 @@ footer {
   .desktopNav {
     display: block;
   }
-  
+
+  .album-cover {
+    z-index: 1;
+  }
+
   .openbtn {
 		display: none;
 	}
